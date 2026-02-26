@@ -90,8 +90,9 @@
                     const percentEl = document.getElementById(`percent-${index}`);
                     const materialEl = document.getElementById(`material-${index}`);
                     
-                    const hasMaterial = mat.state !== 0 && mat.type !== "" && mat.type !== "EMPTY";
+                    const hasMaterial = mat.state !== 0;
                     const isSelected = mat.selected === 1;
+                    const hasRfid = mat.state === 2;
 
                     if (hasMaterial) {
                         container.classList.remove('empty-spool');
@@ -104,6 +105,12 @@
                         percentEl.style.visibility = 'hidden';
                         materialEl.style.fill = "#555";
                         materialEl.textContent = "EMPTY";
+                    }
+
+                    if (hasRfid) {
+                        percentEl.style.visibility = 'visible';
+                    } else {
+                        percentEl.style.visibility = 'hidden';
                     }
 
                     if (isSelected && hasMaterial) {
