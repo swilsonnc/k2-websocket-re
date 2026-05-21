@@ -9,6 +9,7 @@ This might work on all K2 Printers or even all Creality Printers but I could onl
 ## Table of Contents
 - [Overview](#overview)
 - [Proof of Concept: CFS Status in Fluidd](#proof-of-concept-cfs-status-in-fluidd)
+- [Proof of Concept: CFS Status in Mainsail](#proof-of-concept-cfs-status-in-mainsail)  <--- NEW
 - [WebSocket Protocol Documentation](#websocket-protocol-documentation)
 - [Command Reference](#command-reference)
 - [Example](#example)
@@ -78,6 +79,19 @@ I've created a JavaScript bookmarklet that injects real-time CFS status into you
 5. Follow steps 2-7 from Method 1
 
 > **Note:** You need to click the bookmark after every page reload!
+
+## Proof of Concept: CFS Status in Mainsail
+
+I have created a cfs panel that can be used in Mainsail (If you are using it instead of Fluidd)
+
+### Installation
+
+1. SSH into your K2, K2 Pro or K2 Plus and navigate to Mainsail's web directory located at /usr/share/mainsail/
+2. Create a backup of your index.html file ( cp index.html index.bak)
+3. Upload cfs-panel.js and index.html files to that folder (I use mobaxterm to SSH)
+4. Load or reload your mainsail page in the browser.
+
+If you overwrite or factory reset (or maybe even update) your printer you may have to repeat this process.
 
 ## WebSocket Protocol Documentation
 
